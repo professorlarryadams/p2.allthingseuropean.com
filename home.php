@@ -27,7 +27,6 @@
     <li><a href="blog.php" title="blog">Blog</a></li>
     <li><a href="members.php" title="membership">Members</a></li>
     <li><a href="contact.php" title="contact_us">Contact</a></li>
-    <li><a href="sitemap.php" title="sitemap">Sitemap</a></li>
     <li><a href="login.php" title="Login">Login</a></li>
 
 </ul>

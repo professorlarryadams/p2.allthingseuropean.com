@@ -11,37 +11,14 @@
 
 <div class="header">
 <ul id="navigation" class="nav-main">
-	<li><a href="http://www.psdgraphics.com/">Home</a></li>
-    
-    <li class="list"><a href="#">About Us</a>
-	<ul class="nav-sub">
-    <li><a href="#">Location</a></li>
-		<li><a href="#"> </a></li>
-		<li><a href="#"></a></li>
-		<li><a href="#"></a></li>
-		<li><a href="#"></a></li>
-		<li><a href="#"></a></li>
-		<li><a href="#"></a></li>
-		<li><a href="#"></a></li>    
-	</ul>
-	</li>
-    
-    	<li class="list"><a href="#">Shopping</a>
-	<ul class="nav-sub">
-    	<li><a href="#">Europe Map</a></li>
- 		<li><a href="#">Products</a></li>
-		<li><a href="#">Warranty</a></li>
-	</ul>
-		</li>
-    
-    	<li><a href="#">Blog</a></li>
-    	<li><a href="#">Contact</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Contact</a></li>
-    
+	<li><a href="home.php" title="Homepage">Home</a></li>
+    <li><a href="about.php" title="about_us">About Us</a></li>
+    <li><a href="blog.php" title="blog">Blog</a></li>
+    <li><a href="members.php" title="membership">Members</a></li>
+    <li><a href="contact.php" title="contact_us">Contact</a></li>
+    <li><a href="login.php" title="Login">Login</a></li>
 
-	</ul>
+</ul>
 </div>
 
 </body>

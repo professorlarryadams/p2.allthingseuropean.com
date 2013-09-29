@@ -22,13 +22,12 @@
 	<br />
 
 <ul id="navigation" class="nav-main">
-	<li><a href="blog/home.php" title="Homepage">Home</a></li>
-    <li><a href="blog/about.php" title="about_us">About Us</a></li>
-    <li><a href="blog/blog/default.php" title="blog">Blog</a></li>
-    <li><a href="blog/members.php" title="membership">Members</a></li>
-    <li><a href="blog/contact.php" title="contact_us">Contact</a></li>
-    <li><a href="blog/sitemap.php" title="sitemap">Sitemap</a></li>
-    <li><a href="blog/login.php" title="Login">Login</a></li>
+	<li><a href="home.php" title="Homepage">Home</a></li>
+    <li><a href="about.php" title="about_us">About Us</a></li>
+    <li><a href="blog.php" title="blog">Blog</a></li>
+    <li><a href="members.php" title="membership">Members</a></li>
+    <li><a href="contact.php" title="contact_us">Contact</a></li>
+    <li><a href="login.php" title="Login">Login</a></li>
 
 </ul>
 

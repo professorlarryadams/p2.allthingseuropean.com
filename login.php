@@ -13,7 +13,7 @@
 <body>
 
 	<br />
-		<h1 style="text-align:center">All Things European</h1>
+		<h1 style="text-align:center">All Things European Login</h1>
     <br />
 
 <ul id="navigation" class="nav-main">
@@ -22,7 +22,6 @@
     <li><a href="blog.php" title="blog">Blog</a></li>
     <li><a href="members.php" title="membership">Members</a></li>
     <li><a href="contact.php" title="contact_us">Contact</a></li>
-    <li><a href="sitemap.php" title="sitemap">Sitemap</a></li>
     <li><a href="login.php" title="Login">Login</a></li>
 
 </ul>
@@ -31,7 +30,7 @@
 
 	<div id="content">
 		<form action="blog.php" method="post">
-			<h1>Secure Login Form</h1>
+			<h1>Login Form</h1>
 			<div>
 				<input type="text" placeholder="Username" required id="username" />
 			</div>
