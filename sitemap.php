@@ -18,7 +18,7 @@
 
 <section>
 	<br />
-  <h2>Welcome to All Things European Website</h2>
+  <h2>All Things European Sitemap</h2>
 	<br />
 
 <ul id="navigation" class="nav-main">
@@ -33,19 +33,23 @@
 </ul>
 
 <br />
-<h3>In order to add a posting or view your shopping cart you must login into our website.<br />  Click the "START" button to the login page and sign up for an account.</h3>
+<h3>&nbsp;</h3>
+<p>&nbsp;</p>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>Under Costruction - check back soon!</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 <br />
-<p><a href="login.php" class="highlightit"><img src="images/start.jpg"  alt="start button"></a> </p>
 
-<table>
-  <tr>
-    <td><img src="images/dynamic-see-europe-header.jpg" style="text-align:center" alt="european image"></td>
-  </tr>
-  <tr>
-  	<th>Our products are shipped directly from Europe to your home!</th>
-    </tr>
-  </table>
+
+
   <br />
 </section>
 

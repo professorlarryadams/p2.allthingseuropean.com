@@ -1,46 +1,16 @@
 /****************Project 2*********/
 
 iframe {
-	width: 98%;
-	height: 98%;
-	padding: 5px;
-	margin: 5px;
+	width: 100%;
+	height: 100%;
+	padding: auto;
+	margin: auto;
 }
 
 /* -----left nav info----- */
 .nav_ul {list-style-image:url(/images/general/arrow.jpg); margin:5px 1em 0 1em;}
 .nav_ul li {margin-top:3px}
 .nav_ul2 {margin:.5em .5em .5em 1em;}
-
-.branding {
-			text-align:center; margin-top:5px;
-			background-color:#FFFFFF;
-			margin: 10px;
-			padding: 10px;
-}
-
-/* new left nav on home page*/
-.new_head {
-	margin: 2px 0px 0px 0px;
-	padding:0;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-weight:bold;
-	font-size:1em;
-	text-align:center;
-}
-.new_head a {color:#003366; text-decoration:none;
-	display: block;
-	width:99%;
-	height:27px;
-	background-image:url(/images/general/long_button3.png);
-	background-position:6px;
-	background-repeat:no-repeat;
-	padding:12px 5px 0px 5px;}
-	
-.new_head a:link {color:#003366; text-decoration:none;}
-.new_head a:visited {color:#003366; text-decoration:none;}
-.new_head a:hover {color:#003366; text-decoration:underline;}
-.new_head a:active {color:#003366; text-decoration:none;}
 
 
 /* specific to left navigation on most pages */
@@ -93,94 +63,8 @@ h3 a:visited {text-decoration:none; color:#036;}
 .sub_menu a:hover{color:#036;}
 .sub_menu a:active {color:#036;}
 
-/* top of main section
-----most pgs---*/
-#main_left_top {float:left; width:300px; height:215px; padding:10px; border: 1px solid #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow:3px 3px 5px #999;}
-#main_right_top {float:right; margin:0; position:relative; width:300px; height:235px; border: 1px solid #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow:3px 3px 5px #999; padding:0;}
-
-/* top of main section
-----most pgs---
----height varies and will need added as style---
-*/
-#tab_section {width:640px; height:360px; padding-top:10px; margin:0}
-
-/* bottom main section of
----- home pg --- */
-#news {float:left; width:413px; margin:1em 10px 0 0; border:#516b8c solid; border-width:1px 3px 3px 1px; box-shadow:3px 3px 5px #999;}
-#news h6{margin-top:1em;}
 
 
-#news ul {border-bottom:1px solid #bbb; margin:0;}
-#news li {padding: 0 0 2px 1em; list-style:none;}
- 
-#extra-links {
-	width:215px;
-	float:left;
-	margin-top:1em;
-
-}
-#extra-links div { margin-bottom:10px; box-shadow:3px 3px 5px #999;}
-#extra-links div#faq {background-image:url(/images/general/faq_bg.jpg); border:solid 1px #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow: 3px 3px 10px #666; text-align:center; padding:5px 38px 10px 0; font-size:20px; font-family:Georgia, "Times New Roman", Times, serif; line-height:16px;}
-
-/* Place holder for videos*/
-.video {background-image:url(/images/videos/video_icon.jpg); background-position:0 0; background-repeat:no-repeat; width:145px; text-align:center; margin-bottom:0px; box-shadow: none;}
-.video_btn {margin-top:20px;}
-.video_text {background-color:#cc3333; font-size:100%; font-weight:bold; padding:5px; width: 130px; margin:80px auto 0 auto;}
-.video_text a:link{color:#FFFFFF; text-decoration:none;}
-.poster {width:215px; height:198px; text-align:center; margin:auto; margin-bottom:0px; box-shadow: none;}
-
-.linkbox div{
-/*    box-sizing:border-box; */
-	border:1px solid #7d7d7d;
-	box-shadow:3px 3px 5px #999;
-	border-bottom-width:3px;
-	border-right-width:3px;
-	margin-right:10px;
-	margin-top:1em;
-	float:left;
-	width:200px;
-}
-
-.linkbox .wider{width:210px; margin-right:0;}
-.linkbox h3{ margin:.5em; border-bottom:dotted 1px;}
-.linkbox ul{font-size:83%;}
-.linkbox ul li{ margin:3px 0 0 0; list-style:none}
- 
-#content.medium .linkbox div select{ font-size:60%;}
-#content.large .linkbox div select{ font-size:50%; }
-
-.nav-select {border:1px solid; margin:10px; width:90%;} 
-
-/* use if emergency message is needed on home page */
-#atten {color:#000; text-align:center; font-weight:bold; margin-top:1em;}
-
-/* use for flash video or rollovers */
-.flash {border: 1px solid #516b8c; border-bottom-width:3px; border-right-width:3px;	box-shadow:3px 3px 5px #999; padding:0; margin:0; box-sizing:border-box; -moz-box-sizing:border-box; /*Firefox*/ background-color:#516b8c; z-index:30;}
-
-/*blue-gray border w/shadow*/
-.border {border:1px solid #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow: 3px 3px 10px #666;}
-.shadow {box-shadow:3px 3px 5px #999;}
-
-/* announcement boxes through out */
-.announcement {float:left; color:#CC3333; height:60px; width:623px; padding:0 8px 0 7px; margin:10px 0 10px 0; text-align:center; border:1px solid #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow: 3px 3px 10px #666;} 
-
-.announcement h2 {margin:5px 0 0 0; font-size:1em;}
-#gen_ann {text-align:center; font-size:95%; margin:5px 0 0 0;}
-
-/* header on most pgs */
-.main_hdr {background-color:#959fab; border:1px solid #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow: 3px 3px 10px #666; padding:10px 0 10px 0; margin-bottom:.5em; margin-top:0; }
-
-/*  main sections of 
------frame----- pgs */
-
-.photo { height:300px; width:230px; padding:0 .5em 0 .5em; font-size:83%; float:left;} 
-.photo p { margin:5px 5px 0 5px;}
-
-.rec_txt {width:623px; padding:.5em;}
-.caption {color:#999; margin:10px 0 10px 0;}
-.appt_hol {margin:0; padding:0;}
-/*for table data on REC pages*/
-.rec {width:80px;}
 
 /* used for some 
 ---color boxes --- */

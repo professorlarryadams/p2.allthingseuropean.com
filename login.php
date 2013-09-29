@@ -7,13 +7,31 @@
 <meta charset="utf-8">
 <title>Project 2 Login</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+<link href="css/dropdown-menu.css" media="screen" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
+
+	<br />
+		<h1 style="text-align:center">All Things European</h1>
+    <br />
+
+<ul id="navigation" class="nav-main">
+	<li><a href="home.php" title="Homepage">Home</a></li>
+    <li><a href="about.php" title="about_us">About Us</a></li>
+    <li><a href="blog.php" title="blog">Blog</a></li>
+    <li><a href="members.php" title="membership">Members</a></li>
+    <li><a href="contact.php" title="contact_us">Contact</a></li>
+    <li><a href="sitemap.php" title="sitemap">Sitemap</a></li>
+    <li><a href="login.php" title="Login">Login</a></li>
+
+</ul>
+
 <div class="container">
 
-	<section id="content">
-		<form action="section1.php">
-			<h1>Login Form</h1>
+	<div id="content">
+		<form action="blog.php" method="post">
+			<h1>Secure Login Form</h1>
 			<div>
 				<input type="text" placeholder="Username" required id="username" />
 			</div>
@@ -29,7 +47,8 @@
 		<div class="button">
 			<a href="#">Create An Account</a>
 		</div><!-- button -->
-	</section><!-- content -->
+	</div><!-- content -->
 </div><!-- container -->
+
 </body>
 </html>

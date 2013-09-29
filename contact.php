@@ -36,14 +36,14 @@
 <h3>In order to add a posting or view your shopping cart you must login into our website.<br />  Click the "START" button to the login page and sign up for an account.</h3>
 
 <br />
-<p><a href="login.php" class="highlightit"><img src="images/start.jpg"  alt="start button"></a> </p>
+<p><a href="login.php" class="highlightit"><img src="images/phone.png"  alt="start button"></a> </p>
 
 <table>
   <tr>
-    <td><img src="images/dynamic-see-europe-header.jpg" style="text-align:center" alt="european image"></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
-  	<th>Our products are shipped directly from Europe to your home!</th>
+  	<th>&nbsp;</th>
     </tr>
   </table>
   <br />

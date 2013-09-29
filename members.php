@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>All Things European Homepage</title>
+<title>All Things European Membership</title>
 
 <link href="css/style.css" media="screen"  rel="stylesheet" type="text/css"  />
 <link href="css/dropdown-menu.css" media="screen" rel="stylesheet" type="text/css" />
@@ -18,7 +18,7 @@
 
 <section>
 	<br />
-  <h2>Welcome to All Things European Website</h2>
+  <h2>All Things European Membership</h2>
 	<br />
 
 <ul id="navigation" class="nav-main">
@@ -31,21 +31,23 @@
     <li><a href="login.php" title="Login">Login</a></li>
 
 </ul>
+<h3>&nbsp;</h3>
+<p>&nbsp;</p>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>Under Costruction - check back soon!</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 <br />
-<h3>In order to add a posting or view your shopping cart you must login into our website.<br />  Click the "START" button to the login page and sign up for an account.</h3>
 
-<br />
-<p><a href="login.php" class="highlightit"><img src="images/start.jpg"  alt="start button"></a> </p>
 
-<table>
-  <tr>
-    <td><img src="images/dynamic-see-europe-header.jpg" style="text-align:center" alt="european image"></td>
-  </tr>
-  <tr>
-  	<th>Our products are shipped directly from Europe to your home!</th>
-    </tr>
-  </table>
+
   <br />
 </section>
 

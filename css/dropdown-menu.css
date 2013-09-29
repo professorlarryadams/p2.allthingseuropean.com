@@ -6,7 +6,6 @@
 	height:51px;
 	margin: 0 auto;
 	background-color: #000;
-	
 }
 
 
@@ -65,11 +64,10 @@ ul.nav-main li a:hover {
 	color:#D6D6D6;
 }
 
-
-
 ul.nav-main *.list {
 	padding-right: 22px;
 	background: url(../images/navigation-arrow.gif) no-repeat right top;
+	background-color: #000;
 }
 
 
