@@ -33,23 +33,10 @@
 
 <br />
 <h3>This Blog is monitored and only our customers may post information regarding our products and service.</h3>
-<p>&nbsp;</p>
-<h1>&nbsp;</h1>
-<h1>&nbsp;</h1>
+<br />
 <h1>Under Costruction - check back soon!</h1>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
 <br />
 
-
-
-  <br />
 </section>
 
 

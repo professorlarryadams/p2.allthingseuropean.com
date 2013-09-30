@@ -18,7 +18,7 @@
 
 <section>
 	<br />
-  <h2>All Things European Membership</h2>
+  <h2>All Things European</h2>
 	<br />
 
 <ul id="navigation" class="nav-main">
@@ -33,22 +33,8 @@
 </ul>
 <h3>&nbsp;</h3>
 <p>&nbsp;</p>
-<h1>&nbsp;</h1>
-<h1>&nbsp;</h1>
-<h1>Under Costruction - check back soon!</h1>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<h1>Members</h1>
 
-<br />
-
-
-
-  <br />
 </section>
 
 

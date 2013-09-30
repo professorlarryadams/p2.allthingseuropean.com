@@ -12,7 +12,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	border: 0;
 	outline: 0;
-	font-size: 100%;
+	font-size: 95%;
 	vertical-align: baseline;
 	background: transparent;
 }
@@ -32,9 +32,10 @@ section {
 }
 
 table {
-	width: 100%;
+	width: 98%;
 	margin: 5px;;
 	padding: 5px;
+	margin: 0 auto;
 }
 
 th {
@@ -42,7 +43,6 @@ th {
 	text-align:center;
 	margin: 10px;
 	padding: 10px;
-	
 	}
 
 h1{ font-size:28px;}
@@ -84,8 +84,8 @@ form:after {
 }
 .container { 
 	margin: 60px auto; 
-	position: relative; 
-	width: 900px; }
+	position: relative;
+	}
 	
 #content {
 	background: #f9f9f9;

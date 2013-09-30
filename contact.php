@@ -18,7 +18,7 @@
 
 <section>
 	<br />
-  <h2>Welcome to All Things European Website</h2>
+  <h2>Contacting All Things European</h2>
 	<br />
 
 <ul id="navigation" class="nav-main">
@@ -33,19 +33,12 @@
 </ul>
 
 <br />
-<h3>In order to add a posting or view your shopping cart you must login into our website.<br />  Click the "START" button to the login page and sign up for an account.</h3>
+<h3>If you have a question or need help in any way plase feel free to contact us.</h3>
 
 <br />
 <p><a href="login.php" class="highlightit"><img src="images/phone.png"  alt="start button"></a> </p>
 
-<table>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-  	<th>&nbsp;</th>
-    </tr>
-  </table>
+
   <br />
 </section>
 

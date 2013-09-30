@@ -35,19 +35,7 @@
 <h3>&nbsp;</h3>
 <h1>&nbsp;</h1>
 <h1>Under Costruction - check back soon!</h1>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 
-<br />
-
-
-
-  <br />
 </section>
 
 
