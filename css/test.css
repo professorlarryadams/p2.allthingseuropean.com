@@ -1,18 +1,10 @@
 @charset "UTF-8";
 body {
-	font: 90%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	background-color: #4E5869;
-	margin: 5px;
-	padding: 5px;
+	margin: 0;
+	padding: 0;
 	color: #000;
-}
-
-section {
-	width: 98%;
-	float:left;
-	background-color: #ccc;
-	margin: 5px;
-	padding:5px;
 }
 
 /* ~~ Element/tag selectors ~~ */
@@ -25,19 +17,6 @@ h1, h2, h3, h4, h5, h6, p {
 	padding-right: 15px;
 	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
 }
-
-.highlightit img{
-filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
--moz-opacity: 0.5;
-opacity: 0.5;
-}
-
-.highlightit:hover img{
-filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);
--moz-opacity: 1;
-opacity: 1;
-}
-
 a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
 	border: none;
 }
@@ -58,23 +37,15 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 /* ~~ this container surrounds all other divs giving them their percentage-based width ~~ */
 .container {
 	width: 80%;
-	height:100%;
 	max-width: 1260px;/* a max-width may be desirable to keep this layout from getting too wide on a large monitor. This keeps line length more readable. IE6 does not respect this declaration. */
 	min-width: 780px;/* a min-width may be desirable to keep this layout from getting too narrow. This keeps line length more readable in the side columns. IE6 does not respect this declaration. */
 	background-color: #FFF;
 	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout. It is not needed if you set the .container's width to 100%. */
-	
 }
 
 /* ~~the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo~~ */
 .header {
-	font-family:"Times New Roman", Times, serif;
-	text-align:center;
-	background-color: #000;
-	color: #fff;
-	background-image:url(../images/main_bg.gif);
-	height: 200px;
-	
+	background-color: #6F7D94;
 }
 
 /* ~~ This is the layout information. ~~ 
@@ -83,9 +54,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 */
 .content {
-	padding: 0px;
-	margin: 0px;
-	height: 1200px;
+	padding: 10px 0;
 }
 
 /* ~~ This grouped selector gives the lists in the .content area space ~~ */
@@ -93,22 +62,10 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
 }
 
-.box {
-      	background-color:white;
-		text-align:center;
-		margin-top: 110px;
-		margin-bottom: 10px;	
-    }   
-
 /* ~~ The footer ~~ */
 .footer {
-	width: 100%;
-	background-color: #000;
-	color: #fff;
-	text-align:center;
-	font-family:Georgia, "Times New Roman", Times, serif;
-	float:left;
-	margin-bottom:10px;
+	padding: 10px 0;
+	background-color: #6F7D94;
 }
 
 /* ~~ miscellaneous float/clear classes ~~ */

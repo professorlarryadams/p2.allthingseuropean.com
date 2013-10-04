@@ -17,8 +17,9 @@
 <body>
 
 <section>
-	<br />
-  <h2>All Things European Blog</h2>
+<br />
+
+  <h1 style="text-align:center">All Things European</h1>
 	<br />
 
 <ul id="navigation" class="nav-main">
@@ -32,7 +33,7 @@
 </ul>
 
 <br />
-<h3>This Blog is monitored and only our customers may post information regarding our products and service.</h3>
+<h3 style="text-align:center">This Blog was created for our customers to provide feedback on our products and services.</h3>
 <br />
 <h1>Under Costruction - check back soon!</h1>
 <br />

@@ -40,7 +40,7 @@
 			<div>
 				<input type="submit" value="Log in" />
 				<a href="#">Lost your password?</a>
-				<a href="#">Contact Us</a>
+				<a href="contact.php" title="Contacting Us">Contact Us</a>
 			</div>
 		</form><!-- form -->
 		<div class="button">

@@ -18,7 +18,7 @@
 
 <section>
 	<br />
-  <h2>About All Things European</h2>
+  <h1>About All Things European</h1>
 	<br />
 
 <ul id="navigation" class="nav-main">

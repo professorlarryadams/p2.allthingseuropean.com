@@ -11,14 +11,12 @@
 
 <link href="css/style.css" media="screen"  rel="stylesheet" type="text/css"  />
 <link href="css/dropdown-menu.css" media="screen" rel="stylesheet" type="text/css" />
-
 </head>
 
 <body>
 
-<section>
 	<br />
-  <h2>All Things European</h2>
+<h1 style="text-align:center">All Things European</h1>
 	<br />
 
 <ul id="navigation" class="nav-main">
@@ -27,16 +25,39 @@
     <li><a href="blog.php" title="blog">Blog</a></li>
     <li><a href="members.php" title="membership">Members</a></li>
     <li><a href="contact.php" title="contact_us">Contact</a></li>
-    <li><a href="sitemap.php" title="sitemap">Sitemap</a></li>
     <li><a href="login.php" title="Login">Login</a></li>
 
 </ul>
-<h3>&nbsp;</h3>
-<p>&nbsp;</p>
+
+<div class="container">
+
+<div id="content">
+
+<form name="form1" method="post" action="#">
+
 <h1>Members</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
-</section>
 
 
+</form>
+</div>
+
+</div>
 </body>
 </html>
