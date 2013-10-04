@@ -18,7 +18,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 		//assign the ColorBox event to elements, using a class name on the a tag
-		$(".c_box").colorbox({width:"900px", height:"95%", iframe:true, escKey:true, overlayClose:true});
+		$(".c_box").colorbox({width:"960px", height:"95%", iframe:true, escKey:true, overlayClose:true});
 	});
 
 </script>
@@ -41,7 +41,7 @@ $(document).ready(function(){
 
   <div class="box">
   <h2>Select A Flag To View Our Products</h2>
-  	<a href="#" class="highlightit c_box"><img src="images/flags/aus.png" alt="Austria" 	title="Austria"				id="austria"></a>
+  	<a href="colorbox/austria.php" class="highlightit c_box"><img src="images/flags/aus.png" alt="Austria" 	title="Austria"				id="austria"></a>
   	<a href="#" class="highlightit c_box"><img src="images/flags/bel.png" alt="Beligum" 	title="Beligum"				id="beligum"></a>
     <a href="#" class="highlightit c_box"><img src="images/flags/bul.png" alt="Bulgaria" 	title="Bulgaria"			id="bulgaria"></a>
    	<a href="#" class="highlightit c_box"><img src="images/flags/cro.png" alt="Croatia" 	title="Croatia"				id="croatia"></a>
