@@ -16,7 +16,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 }
 body {
-	background: #CCC;
+	background: #FFF;
 	color: #000;
 	font: 14px Arial;
 	margin: 0 auto;
@@ -84,6 +84,10 @@ form:after {
 	position: relative;
 	background-color: #ccc;
 	}
+	
+.error {
+	color:red;
+}
 	
 #content {
 	background: #f9f9f9;
