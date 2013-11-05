@@ -1,11 +1,9 @@
-<section>
-
 <div id="content">
 
 	<h1>Profile Status</h1>
 
     <?php if($user): ?> 
-   	<h2>This is the profile for <?=$user->first_name?> <?=$user->last_name?></h2>
+   	<h2>You are now login as <?=$user->first_name?> <?=$user->last_name?></h2><br>
     <h3>
     	User ID: <?=$user->user_id?><br>
         Email: <?=$user->email?><br>
@@ -13,8 +11,6 @@
         Picture: <?=$user->picture?><br>
         </h3>
 	<?php else: ?>
-   	<h2>You are NOT logged in!
+   	<h2>You are NOT logged in!</h2>
 	<?php endif; ?> <br>
-</h2>
 </div>
-</section>

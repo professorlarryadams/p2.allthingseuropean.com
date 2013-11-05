@@ -15,7 +15,7 @@
 </head>
 
 <body> 
-<br> 
+<br>
 
     <div id='menu'>
 
@@ -26,8 +26,9 @@
 
             <a href='/users/logout'>Logout |</a>
             <a href='/users/profile'>Profile |</a>
-            <a href='/posts/add'>Bloggers |</a>
-            <a href='/posts'>New Posts |</a>
+            <a href='/posts/users'>Bloggers |</a>
+            <a href='/posts/add'>Add Post |</a>
+            <a href='/posts'>Blogs |</a>
 
         <!-- Menu options for users who are not logged in -->
         <?php else: ?>
@@ -38,7 +39,6 @@
         <?php endif; ?>
 
     </div>
-
     <br><br>
 
     <?php if(isset($content)) echo $content; ?>

@@ -4,6 +4,10 @@ class users_controller extends base_controller {
     public function __construct() {
         parent::__construct();
     } 
+	
+	 public function index() {
+        echo "This is the index page";
+    }
 
 	public function signup() {
 
@@ -30,14 +34,17 @@ class users_controller extends base_controller {
     # Insert this user into the database 
     $user_id = DB::instance(DB_NAME)->insert("users", $_POST);
 
-   # Send them back to the sign page
-   Router::redirect("/users/login/");
+    # They now have to log in 
+    Router::redirect("/users/login");
 
 	}
 
 	public function p_login() {
 
-    # Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
+    $_POST['last_login']  = Time::now();
+    $_POST['timezone'] = Time::now();
+	
+	# Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
     $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
     # Hash submitted password so we can compare it against one in the db
@@ -90,8 +97,6 @@ class users_controller extends base_controller {
     echo $this->template;
 
 	}
-	
-
 
 	public function logout() {
 
@@ -129,7 +134,7 @@ class users_controller extends base_controller {
     $this->template->content->user_name = $user_name;
 
     # Render View
-    echo $this-template;
+    echo $this->template;
 
 }
 

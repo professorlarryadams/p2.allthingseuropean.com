@@ -1,10 +1,16 @@
 <section>
 
+<article>
+	<h1 style="">All Things European Blogs</h1>
+</article>
+
 <?php foreach($posts as $post): ?>
 
 <article>
 
-    <h1><?=$post['first_name']?> <?=$post['last_name']?> posted:</h1>
+	<p><?=$post['picture']?></p>
+
+    <h2><?=$post['first_name']?> <?=$post['last_name']?> posted:</h2>
 
     <p><?=$post['content']?></p>
 
@@ -15,4 +21,5 @@
 </article>
 
 <?php endforeach; ?>
+
 </section>

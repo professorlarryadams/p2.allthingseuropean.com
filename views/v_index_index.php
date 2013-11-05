@@ -1,32 +1,13 @@
-<!DOCTYPE html SYSTEM "about:legacy-compat"> 
-<html lang="en" xml:lang="en">
-
-<head>
-    <title><?php if(isset($title)) echo $title; ?></title>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
-    <!-- Common CSS/JSS -->
-   <link rel="stylesheet" href="../css/default.css" 	type="text/css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    
-        <!-- Controller Specific CSS/JS -->
-    <?php if(isset($client_files_head)) echo $client_files_head; ?>
-
-</head>
-
-<body>
-	<br><br>	
+	
        <div id="content">
-         <h1>Welcome to<?=APP_NAME?></h1>
-            
-        <h3><?php if($user) echo $user->first_name;?></h3><br>
-  		<h3>Great Deals in Europe!</h3>
-        <h4>Tell Us About Your Travels in Europe!</h4><br>
+         <h1>Welcome to <?=APP_NAME?></h1>  
+        <h2><?php if($user) echo $user->first_name;?></h2><br>
+        <h3>Tell Us About Your Travels in Europe!</h3><br>
           <hr>
           <p>
           	<a href="http://europa.eu/about-eu/countries/member-countries/austria/index_en.htm" target="_blank"><img src="../images/flags/aus.png" alt="Austria"  	title="Austria" id="aus"></a>
             <a href="http://europa.eu/about-eu/countries/member-countries/belgium/index_en.htm" target="_blank"><img src="../images/flags/bel.png" alt="Belgium"  	title="Belgium" id="bel"></a>
-            <a href="http://europa.eu/about-eu/countries/member-countries/bulgaria/index_en.htm" target="_blank"><img src="../images/flags/bul.png" alt="Bulgaria" 	title="Bulgaria"id="bul"></a>
+            <a href="http://europa.eu/about-eu/countries/member-countries/bulgaria/index_en.htm" target="_blank"><img src="../images/flags/bul.png" alt="Bulgaria" 	title="Bulgaria" id="bul"></a>
             <a href="http://europa.eu/about-eu/countries/member-countries/croatia/index_en.htm" target="_blank"><img src="../images/flags/cro.png" alt="Croatia" 	title="Croatia" id="cro"></a>
             <a href="http://europa.eu/about-eu/countries/member-countries/cyprus/index_en.htm" target="_blank"><img src="../images/flags/cyp.png" alt="Cyprus" 	title="Cyprus" 	id="cyp"></a>
           <a href="http://europa.eu/about-eu/countries/member-countries/czechrepublic/index_en.htm" target="_blank"><img src="../images/flags/cze.png" alt="Czech Republic" title="Czech Republic" 	id="cze"></a></p>
@@ -70,6 +51,3 @@
          
 </div> 
     
-</body>
-
-</html>
