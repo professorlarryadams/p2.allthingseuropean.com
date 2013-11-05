@@ -5,16 +5,15 @@ class users_controller extends base_controller {
         parent::__construct();
     } 
 
-    public function signup() {
+	public function signup() {
 
         # Setup view
             $this->template->content = View::instance('v_users_signup');
-            $this->template->title   = "Sign Up";
+            $this->template->title   = 'Sign Up';
 
         # Render template
             echo $this->template;
-
-    }
+	}
 
 	public function p_signup() {
 
@@ -32,20 +31,7 @@ class users_controller extends base_controller {
     $user_id = DB::instance(DB_NAME)->insert("users", $_POST);
 
    # Send them back to the sign page
-   Router::redirect("/users/signup/");
-
-	}
-	
-	public function login($error = NULL) {
-
-    # Set up the view
-    $this->template->content = View::instance("v_users_login");
-
-    # Pass data to the view
-    $this->template->content->error = $error;
-
-    # Render the view
-    echo $this->template;
+   Router::redirect("/users/login/");
 
 	}
 
@@ -87,12 +73,25 @@ class users_controller extends base_controller {
         setcookie("token", $token, strtotime('+2 weeks'), '/');
 
         # Send them to the main page - or whever you want them to go
-        Router::redirect("/");
+        Router::redirect("/users/profile");
 
     }
+		}
 	
+	public function login($error = NULL) {
+
+    # Set up the view
+    $this->template->content = View::instance("v_users_login");
+
+    # Pass data to the view
+    $this->template->content->error = $error;
+
+    # Render the view
+    echo $this->template;
 
 	}
+	
+
 
 	public function logout() {
 

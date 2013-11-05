@@ -13,7 +13,7 @@
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     
-        <!-- Controller Specific CSS/JS -->
+    <!-- Controller Specific CSS/JS -->
     <?php if(isset($client_files_head)) echo $client_files_head; ?>
 
 </head>
@@ -28,8 +28,7 @@
     
     <h1>Log In</h1>
     
-    
-      <h3><span id="sprytextfield1">
+    <h3><span id="sprytextfield1">
       <label for="email">Email:</label><br>
       <input type="text" name="email" id="email"><br>
       <span class="textfieldRequiredMsg">A value is required.</span></span><br>

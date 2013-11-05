@@ -26,8 +26,8 @@
 
             <a href='/users/logout'>Logout |</a>
             <a href='/users/profile'>Profile |</a>
-            <a href='/users/posts/users'>Bloggers |</a>
-            <a href='/users/posts/add'>New Posts |</a>
+            <a href='/posts/add'>Bloggers |</a>
+            <a href='/posts'>New Posts |</a>
 
         <!-- Menu options for users who are not logged in -->
         <?php else: ?>
