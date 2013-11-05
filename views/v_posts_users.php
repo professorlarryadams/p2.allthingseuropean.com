@@ -17,7 +17,5 @@
     <br><br>
 
 <?php endforeach; ?>
-
 </div>
-
 

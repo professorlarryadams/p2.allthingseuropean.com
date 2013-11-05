@@ -1,11 +1,30 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat"> 
+<html lang="en" xml:lang="en">
 
+<head>
+    <title><?php if(isset($title)) echo $title; ?></title>
 
-<div id="content">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+    <!-- Common CSS/JSS -->
+   <link rel="stylesheet" href="../css/default.css" 	type="text/css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+        <!-- Controller Specific CSS/JS -->
+    <?php if(isset($client_files_head)) echo $client_files_head; ?>
+
+</head>
+
+<body>
+	<br><br>	
+       <div id="content">
             <h1>Welcome to<?=APP_NAME?>
         	</h1>
-            <h3><?php if($user) echo $user->first_name;?></h3>
-          	<h3><br>Great Deals in Europe!</h3>
-          <h4><br>Tell Us About Your Travels in Europe!</h4>
+            
+        	<h3><?php if($user) echo $user->first_name;?></h3>
+          	<h3><br>
+    		Great Deals in Europe!</h3>
+          <h4><br>
+          Tell Us About Your Travels in Europe!</h4>
           <hr>
           <p>
           	<a href="#"><img src="../images/flags/aus.png" alt="Austria" id="aus"></a>
@@ -56,4 +75,8 @@
           </h4>
           <br>
          
-		</div>
+		</div> 
+    
+</body>
+
+</html>

@@ -3,23 +3,19 @@ class users_controller extends base_controller {
 
     public function __construct() {
         parent::__construct();
-       
     } 
 
-    public function index() {
-        echo "This is the index page";
-    }
-
-   public function signup() {
+    public function signup() {
 
         # Setup view
             $this->template->content = View::instance('v_users_signup');
-            $this->template->title   = 'Sign Up';
+            $this->template->title   = "Sign Up";
 
         # Render template
             echo $this->template;
-	}
-	
+
+    }
+
 	public function p_signup() {
 
     # More data we want stored with the user
@@ -35,11 +31,24 @@ class users_controller extends base_controller {
     # Insert this user into the database 
     $user_id = DB::instance(DB_NAME)->insert("users", $_POST);
 
-      # Send them to the login page 
-        Router::redirect('/users/login');
+   # Send them back to the sign page
+   Router::redirect("/users/signup/");
 
 	}
 	
+	public function login($error = NULL) {
+
+    # Set up the view
+    $this->template->content = View::instance("v_users_login");
+
+    # Pass data to the view
+    $this->template->content->error = $error;
+
+    # Render the view
+    echo $this->template;
+
+	}
+
 	public function p_login() {
 
     # Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
@@ -78,26 +87,14 @@ class users_controller extends base_controller {
         setcookie("token", $token, strtotime('+2 weeks'), '/');
 
         # Send them to the main page - or whever you want them to go
-        Router::redirect('/users/profile');
+        Router::redirect("/");
 
     }
-
-}
 	
-  public function login($error = NULL) {
-
-    # Set up the view
-    $this->template->content = View::instance("v_users_login");
-
-    # Pass data to the view
-    $this->template->content->error = $error;
-
-    # Render the view
-    echo $this->template;
 
 	}
 
-    public function logout() {
+	public function logout() {
 
     # Generate and save a new token for next login
     $new_token = sha1(TOKEN_SALT.$this->user->email.Utils::generate_random_string());
@@ -116,9 +113,14 @@ class users_controller extends base_controller {
     Router::redirect("/");
 
 	}
+	
+	public function profile($user_name = NULL) {
 
-   public function profile($user_name = NULL) {
-
+    /*
+    If you look at _v_template you'll see it prints a $content variable in the <body>
+    Knowing that, let's pass our v_users_profile.php view fragment to $content so 
+    it's printed in the <body>
+    */
     $this->template->content = View::instance('v_users_profile');
 
     # $title is another variable used in _v_template to set the <title> of the page
@@ -128,10 +130,8 @@ class users_controller extends base_controller {
     $this->template->content->user_name = $user_name;
 
     # Render View
-    echo $this->template;
+    echo $this-template;
 
 }
 
-} # end of the class
-
-?>
+} # eoc

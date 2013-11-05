@@ -1,9 +1,10 @@
-<article>
+<section>
 
 <?php foreach($posts as $post): ?>
 
-    <h1><?=$post['first_name']?> <?=$post['last_name']?> Posted:</h1>
-    <p><?=$post['picture']?> <?=$post['country']?> Country:</p><br>
+<article>
+
+    <h1><?=$post['first_name']?> <?=$post['last_name']?> posted:</h1>
 
     <p><?=$post['content']?></p>
 
@@ -11,5 +12,7 @@
         <?=Time::display($post['created'])?>
     </time>
 
-<?php endforeach; ?>
 </article>
+
+<?php endforeach; ?>
+</section>
