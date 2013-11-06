@@ -93,12 +93,12 @@ class users_controller extends base_controller {
             else {
                 
                 # Upload Image
-                $data = Array('picture' => $avatar);
+                $data = Array('picture' => $picture);
                 DB::instance(DB_NAME)->update('users', $data, 'WHERE user_id = '.$this->user->user_id);
  
                 # Resize and Save Image
                 $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/images/picture/'.$picture);
-                $imageObj->resize(150,150,'auto');
+                $imageObj->resize(150,150,'crop');
                 $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/image/picture/'.$picture);
                 
                 
