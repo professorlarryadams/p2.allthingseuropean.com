@@ -6,7 +6,7 @@
 <?php foreach($users as $user): ?>
 
     <!-- Print this user's name -->
-    <img src="/images/picture/<?=$user->picture; ?>" class='profile'> <?=$user['first_name']?> <?=$user['last_name']?>
+    <img src="/images/flags/<?=$user->picture; ?>" class='profile'> <?=$user['first_name']?> <?=$user['last_name']?>
 
     <!-- If there exists a connection with this user, show a unfollow link -->
     <?php if(isset($connections[$user['user_id']])): ?>

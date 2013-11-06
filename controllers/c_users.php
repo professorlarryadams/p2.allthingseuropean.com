@@ -74,15 +74,11 @@ class users_controller extends base_controller {
 	            	mail($to, $subject, $message, $headers);
                 }         
     	
-				# Send to the login page
-				Router::redirect('/users/login');
-			}
-   
+				}
 	
-	# Upload image
 	   if ($_FILES['picture']['error'] == 0) {
             
-            $picture = Upload::upload($_FILES, "/images/picture/", array('jpg', 'jpeg', 'gif', 'png'), $user_id);
+            $picture = Upload::upload($_FILES, "/images/flags/", array('jpg', 'jpeg', 'gif', 'png'), $user_id);
  
             if($picture == 'Invalid file type.') {
                 
@@ -97,9 +93,9 @@ class users_controller extends base_controller {
                 DB::instance(DB_NAME)->update('users', $data, 'WHERE user_id = '.$user_id);
  
                 # Resize and Save Image
-                $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/images/picture/'.$picture);
+                $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/images/flags'.$picture);
                 $imageObj->resize(200,200,'crop');
-                $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/images/picture/'.$picture);
+                $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/images/flags'.$picture);
                 
                 
             }
@@ -112,7 +108,7 @@ class users_controller extends base_controller {
         }
  
         # Send to Profile Page
-        Router::redirect('/users/profile'); 
+        Router::redirect('/users/login'); 
     } 
 	
 	
