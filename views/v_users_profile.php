@@ -9,7 +9,7 @@
         Email: <?=$user->email?><br>
     	Country: <?=$user->country?><br>
         Picture: <?=$user->picture?><br>
-        <div class="picture" style="background: url('<?=$user->picture;?>') center center no-repeat;"></div>
+         <img src="<?=$user->picture; ?>" class='profile'>
         </h3>
 	
 	<?php else: ?>

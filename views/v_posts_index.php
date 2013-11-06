@@ -8,7 +8,7 @@
 
 <article>
 
-	<p><?=$post['picture']?></p>
+	<p><img src="<?=$user->picture; ?>" class='profile'></p>
 
     <h2><?=$post['first_name']?> <?=$post['last_name']?> posted:</h2>
 

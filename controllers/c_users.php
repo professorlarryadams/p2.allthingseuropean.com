@@ -82,7 +82,7 @@ class users_controller extends base_controller {
 	# Upload image
 	   if ($_FILES['picture']['error'] == 0) {
             
-            $picture = Upload::upload($_FILES, "/images/profile/", array('jpg', 'jpeg', 'gif', 'png'), $this->user->user_id);
+            $picture = Upload::upload($_FILES, "/images/picture/", array('jpg', 'jpeg', 'gif', 'png'), $this->user->user_id);
  
             if($picture == 'Invalid file type.') {
                 
@@ -97,9 +97,9 @@ class users_controller extends base_controller {
                 DB::instance(DB_NAME)->update('users', $data, 'WHERE user_id = '.$this->user->user_id);
  
                 # Resize and Save Image
-                $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/images/profile/'.$picture);
+                $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/images/picture/'.$picture);
                 $imageObj->resize(150,150,'auto');
-                $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/image/profile/'.$picture);
+                $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/image/picture/'.$picture);
                 
                 
             }
@@ -151,7 +151,7 @@ class users_controller extends base_controller {
     # If we didn't find a matching token in the database, it means login failed
     if(!$token) {
 
-    # Send them back to the login page
+    # Send them back to the login page if there is an error
     Router::redirect("/users/login/invalid-login");
 
     # But if we did, login succeeded! 

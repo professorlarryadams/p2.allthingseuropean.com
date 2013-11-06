@@ -20,9 +20,18 @@
      	<input type="password" name="password" placeholder='Password' id="password"><br><br>
 
    	  	<label for="file">Upload your picture:<br>
-   	  	</label><input name="picture"  type="file" value='file' id="picture"><br>
         
-        <input type='hidden' name='timezone'>
+   	  	</label><input name="picture" accept='image' value='file' id="picture"><br>
+        
+        <input type='file' accept='image' name='picture'><br>
+            
+        <?php if(isset($error)): ?>
+                <div class='error'>
+                     Image upload failed, please try again.
+                </div>
+                                <br>
+        <?php endif; ?>
+        
         
         <?php if($error && $error == 'user-exists'): ?>
          <div class='error'>
