@@ -9,11 +9,14 @@ class users_controller extends base_controller {
         echo "This is the index page";
     }
 
-	public function signup() {
+	public function signup($error = Null) {
 
         # Setup view
             $this->template->content = View::instance('v_users_signup');
             $this->template->title   = 'Sign Up';
+			
+		# Pass data to the view
+		$this->template->content->error = $error;
 
         # Render template
             echo $this->template;
@@ -23,6 +26,9 @@ class users_controller extends base_controller {
 		
 		# Sanitize Data Entry
     	$_POST = DB::instance(DB_NAME)->sanitize($_POST);
+		
+		# Set up Email / Password Query
+    	$q = "SELECT * FROM users WHERE email = '".$_POST['email']."'"; 
 		
 		# Query Database
     	$user_exists = DB::instance(DB_NAME)->select_rows($q);
@@ -83,6 +89,21 @@ class users_controller extends base_controller {
  
 
 	}
+	
+	  public function login($error = NULL) {
+        
+        # Setup view
+        $this->template->content = View::instance('v_users_login');
+        $this->template->title   = "Login";
+
+        # Pass data to the view
+        $this->template->content->error = $error;
+
+        # Render template
+        echo $this->template;
+
+    }
+	
 
 	public function p_login() {
 	
@@ -119,22 +140,11 @@ class users_controller extends base_controller {
     }
 		}
 	
-  public function login($error = NULL, $success = NULL) {
-        
-        # Setup view
-        $this->template->content = View::instance('v_users_login');
-        $this->template->title   = "Login";
-
-        # Pass data to the view
-        $this->template->content->error = $error;
-        $this->template->content->success = $success;
-
-        # Render template
-        echo $this->template;
-
-    }
 
 	public function logout() {
+		
+	# Sanitize Data Entry
+    $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
     # Generate and save a new token for next login
     $new_token = sha1(TOKEN_SALT.$this->user->email.Utils::generate_random_string());
@@ -154,7 +164,10 @@ class users_controller extends base_controller {
 
 	}
 	
-	public function profile($user_name = NULL) {
+	public function profile($error = NULL) {
+		
+	# Sanitize Data Entry
+    $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 		
 	# If user is blank, they're not logged in; redirect them to the login page
     if(!$this->user) {
@@ -164,7 +177,7 @@ class users_controller extends base_controller {
     $this->template->content = View::instance('v_users_profile');
 
     # $title is another variable used in _v_template to set the <title> of the page
-    $this->template->title = "Profile";
+    $this->template->title = "Profile of".$this->user->first_name;
 	
 	# Query
             $q = "SELECT *
@@ -179,40 +192,11 @@ class users_controller extends base_controller {
 
 
     # Pass information to the view fragment
-    $this->template->content->user_name = $user_name;
+    #$this->template->content->user_name = $user_name;
 
     # Render View
     echo $this->template;
 
 	}
-
-	public function profile_update() {
-        // Set up the view
-        $this->template->content = View::instance('v_users_profile_update');
-        $this->template->title   = "Update Profile";
-
-        // Render the view
-        echo $this->template;
-
-    }
-
-
-    public function p_profile_update() {
-
-
-        $q = "UPDATE    users
-            SET         first_name = '".$_REQUEST['first_name']."',
-                        last_name = '".$_REQUEST['last_name']."',
-                        email = '".$_REQUEST['email']."'
-            WHERE       email = '".$this->user->email."'";
-
-        DB::instance(DB_NAME)->query($q);
-        
-		# Send them back to the login page with a success message
-		Router::redirect("/users/profile");
-
-        
-        
-    }
 
 } # eoc

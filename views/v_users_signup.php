@@ -25,7 +25,7 @@
         <input type='hidden' name='timezone'>
      </h3>
          
-        <br><br>
+        <br>
 
     	<input type='submit' value='Sign up'>
          
