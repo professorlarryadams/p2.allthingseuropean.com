@@ -15,14 +15,12 @@
       	<input type="password" name="password" id="password"><br>
   	<br>
 
-    	<?php if(isset($error)): ?>
-        <div id="error">
-            Login failed.<br>
-            Please double check your email and password is correct.<br>
-            Also no blanks allowed.
-        </div>
-        <br>
-    	<?php endif; ?>
+    	<?php if($error && $error == 'user-exists'): ?>
+				This user already exists
+			<!-- You're not doing a check for blank-fields, so we'll use this here instead for just a failed login -->	
+			<?php elseif(isset($error) && $error == 'invalid-login'): ?>
+				Login failed.
+			<?php endif; ?>
         
 
     	<input type='submit' value='Log in'>

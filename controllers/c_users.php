@@ -20,19 +20,52 @@ class users_controller extends base_controller {
 	}
 
 	public function p_signup() {
-
-    # More data we want stored with the user
-    $_POST['created']  = Time::now();
-    $_POST['modified'] = Time::now();
-
-    # Encrypt the password  
-    $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
-
-    # Create an encrypted token via their email address and a random string
-    $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string()); 
-
-    # Insert this user into the database 
-    $user_id = DB::instance(DB_NAME)->insert("users", $_POST);
+		
+		# Sanitize Data Entry
+    	$_POST = DB::instance(DB_NAME)->sanitize($_POST);
+		
+		# Query Database
+    	$user_exists = DB::instance(DB_NAME)->select_rows($q);
+    	
+    	# Check if email exists in database
+    		if(!empty($user_exists)){
+    		
+    			# Send to Login page
+    			# needs to pass some error message along...
+	    		Router::redirect('/users/login/user-exists');
+    		}
+    		
+    		else {
+	    		
+		    	# Mail Setup
+				$to = $_POST['email'];
+				$subject = "Welcome to All Things European!";
+				$message = "Thanks for signing up to our Blog, login at p2.allthingseuropean.com and your Blog.";
+				$from = 'ladams@allthingseuropean.com';
+				$headers = "From:" . $from;         
+	    		
+	    		# More data we want stored with the user
+				$_POST['created'] = Time::now();
+				$_POST['modified'] = Time::now();
+    	
+				# Encrypt password
+				$_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
+    	
+				# Create encrypted token via email and random string
+				$_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+    	
+				# Insert this user into the database
+				$user_id = DB::instance(DB_NAME)->insert('users', $_POST);
+    	
+				# Send Email
+                if(!$this->user) {
+	            	mail($to, $subject, $message, $headers);
+                }         
+    	
+				# Send to the login page
+				Router::redirect('/users/login');
+			}
+   
 	
 	# Upload image
         Upload::upload($_FILES, "/images/flags/", array("JPG", "JPEG", "jpg", "jpeg", "gif", "GIF", "png", "PNG"), $user_id);
@@ -48,15 +81,10 @@ class users_controller extends base_controller {
         $data = Array("picture" => $picture);
         DB::instance(DB_NAME)->update("users", $data, "WHERE user_id = '".$user_id."'"); 
  
-    # They now have to log in 
-    Router::redirect("/users/login/?success-true");
 
 	}
 
 	public function p_login() {
-
-    $_POST['last_login']  = Time::now();
-    $_POST['timezone'] = Time::now();
 	
 	# Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
     $_POST = DB::instance(DB_NAME)->sanitize($_POST);
@@ -77,23 +105,15 @@ class users_controller extends base_controller {
     if(!$token) {
 
     # Send them back to the login page
-    Router::redirect("/users/login/?error=true");
+    Router::redirect("/users/login/error");
 
     # But if we did, login succeeded! 
     } else {
 
-        /* 
-        Store this token in a cookie using setcookie()
-        Important Note: *Nothing* else can echo to the page before setcookie is called
-        Not even one single white space.
-        param 1 = name of the cookie
-        param 2 = the value of the cookie
-        param 3 = when to expire
-        param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
-        */
+       # Sets cookie for two weeks
         setcookie("token", $token, strtotime('+2 weeks'), '/');
 
-        # Send them to the main page - or whever you want them to go
+        # Send them to the profile page
         Router::redirect("/users/profile");
 
     }
@@ -157,11 +177,6 @@ class users_controller extends base_controller {
         # Pass data to the View
         $this->template->content->posts = $posts;
 
-        # Use load_client_files to generate the links from the above array
-        $this->template->client_files_head = Utils::load_client_files($client_files_head);  
-        
-        # Use load_client_files to generate the links from the above array
-        $this->template->client_files_body = Utils::load_client_files($client_files_body);
 
     # Pass information to the view fragment
     $this->template->content->user_name = $user_name;
