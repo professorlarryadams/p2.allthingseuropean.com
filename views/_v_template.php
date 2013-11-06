@@ -37,8 +37,7 @@
 
         <?php endif; ?>
 
-
-    <br><br>
+		<br><br>
 
     <?php if(isset($content)) echo $content; ?>
 

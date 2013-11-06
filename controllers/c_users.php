@@ -8,6 +8,8 @@ class users_controller extends base_controller {
 	 public function index() {
         echo "This is the index page";
     }
+	
+	# Sign up function
 
 	public function signup($error = Null) {
 
@@ -21,6 +23,8 @@ class users_controller extends base_controller {
         # Render template
             echo $this->template;
 	}
+	
+	# Process signup
 
 	public function p_signup() {
 		
@@ -40,6 +44,8 @@ class users_controller extends base_controller {
     			# needs to pass some error message along...
 	    		Router::redirect('/users/login/user-exists');
     		}
+			
+			
     		
     		else {
 	    		
@@ -74,21 +80,41 @@ class users_controller extends base_controller {
    
 	
 	# Upload image
-        Upload::upload($_FILES, "/images/flags/", array("JPG", "JPEG", "jpg", "jpeg", "gif", "GIF", "png", "PNG"), $user_id);
-        
-        # Filename (la.jpg)
-		$filename = $_FILES['picture']['name']; 
-		# Filename format (jpg, png, gif)
-        $extension = substr($filename, strrpos($filename, '.')); 
-		# user_id plus file extion (la.jpg)
-        $avatar = $user_id.$extension; 
-
-        # Add Image to DB in "picture" column
-        $data = Array("picture" => $picture);
-        DB::instance(DB_NAME)->update("users", $data, "WHERE user_id = '".$user_id."'"); 
+	   if ($_FILES['picture']['error'] == 0) {
+            
+            $picture = Upload::upload($_FILES, "/images/profile/", array('jpg', 'jpeg', 'gif', 'png'), $this->user->user_id);
  
-
-	}
+            if($picture == 'Invalid file type.') {
+                
+                # Error
+                Router::redirect('/users/profile/error'); 
+            }
+            
+            else {
+                
+                # Upload Image
+                $data = Array('picture' => $avatar);
+                DB::instance(DB_NAME)->update('users', $data, 'WHERE user_id = '.$this->user->user_id);
+ 
+                # Resize and Save Image
+                $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/images/profile/'.$picture);
+                $imageObj->resize(150,150,'auto');
+                $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/image/profile/'.$picture);
+                
+                
+            }
+        }
+        
+        else {
+        
+            # Error
+            Router::redirect("/users/profile/error");  
+        }
+ 
+        # Send to Profile Page
+        Router::redirect('/users/profile'); 
+    } 
+	
 	
 	  public function login($error = NULL) {
         
@@ -126,7 +152,7 @@ class users_controller extends base_controller {
     if(!$token) {
 
     # Send them back to the login page
-    Router::redirect("/users/login/error");
+    Router::redirect("/users/login/invalid-login");
 
     # But if we did, login succeeded! 
     } else {

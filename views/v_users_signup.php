@@ -23,6 +23,16 @@
    	  	</label><input name="picture"  type="file" value='file' id="picture"><br>
         
         <input type='hidden' name='timezone'>
+        
+        <?php if($error && $error == 'user-exists'): ?>
+         <div class='error'>
+                This user already exists
+         </div>
+          <?php elseif(isset($error) && $error == 'invalid-login'): ?>
+          <div class='error'>
+              	Login failed, please try again
+          </div>
+          <?php endif; ?>
      </h3>
          
         <br>
