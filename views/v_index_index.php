@@ -53,7 +53,7 @@
 <br>
 
 <section>
-<h2>My 2 Plus 2</h2>
-<p>First is the ability to upload a picture to your profile.</p>
-<p>Second is an email notification that you have signed up to the Blog</p>
+<h1>My 2 Plus 2</h1><br>
+<h3>First is the ability to upload a picture to your profile when you signup.<br>
+Second is an email notification that you have signed up to our Blog</h3><br>
 </section>

@@ -1,4 +1,4 @@
-<div id="content">
+<section>
 <h3>Select Unfollow to view all postings:</h3>
 <br>
 
@@ -6,7 +6,8 @@
 <?php foreach($users as $user): ?>
 
     <!-- Print this user's name -->
-    <img src="/images/flags/<?=$user->picture; ?>" class='profile'> <?=$user['first_name']?> <?=$user['last_name']?>
+    <div class="picture" style="background: url('<?=$user->picture; ?> center center no-repeat;"></div>
+    <img src="/images/flags/<?=$user->picture; ?>" alt="Blogger image" class='profile'><br> <?=$user['first_name']?> <?=$user['last_name']?>
 
     <!-- If there exists a connection with this user, show a unfollow link -->
     <?php if(isset($connections[$user['user_id']])): ?>
@@ -22,5 +23,5 @@
 <?php endforeach; ?>
 </h2>
 
-</div>
+</section>
 

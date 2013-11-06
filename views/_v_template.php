@@ -15,6 +15,8 @@
 </head>
 
 <body>
+
+
 <br>
 <div id='menu'>
 
@@ -39,11 +41,9 @@
 
 		<br><br>
 
-    <?php if(isset($content)) echo $content; ?>
+</div><br><br>
 
-</div>
-
-
+<?php if(isset($content)) echo $content; ?>
 </body>
 
 </html>

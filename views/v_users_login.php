@@ -9,10 +9,10 @@
     
     <h3>
     	<label for="email">Email:</label><br>
-      	<input type="text" name="email" id="email"><br>
+      	<input type="text" name="email" id="email" required><br>
       
     	<label for="password">Password:</label><br>
-      	<input type="password" name="password" id="password"><br>
+      	<input type="password" name="password" id="password" required><br>
   	<br>
 
     	 <?php if($error && $error == 'user-exists'): ?>

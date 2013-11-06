@@ -93,9 +93,9 @@ class users_controller extends base_controller {
                 DB::instance(DB_NAME)->update('users', $data, 'WHERE user_id = '.$user_id);
  
                 # Resize and Save Image
-                $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/images/flags'.$picture);
+                $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/images/flags/'.$picture);
                 $imageObj->resize(200,200,'crop');
-                $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/images/flags'.$picture);
+                $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/images/flags/'.$picture);
                 
                 
             }
@@ -210,7 +210,7 @@ class users_controller extends base_controller {
         $posts = DB::instance(DB_NAME)->select_rows($q);
 
         # Pass data to the View
-        $this->template->content->posts = $posts;
+        $this->template->content->user_name = $user_name;
 		$this->template->content->picture = $picture;
 
     # Pass information to the view fragment
