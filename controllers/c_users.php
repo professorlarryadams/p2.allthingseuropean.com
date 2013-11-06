@@ -82,7 +82,7 @@ class users_controller extends base_controller {
 	# Upload image
 	   if ($_FILES['picture']['error'] == 0) {
             
-            $picture = Upload::upload($_FILES, "/images/picture/", array('jpg', 'jpeg', 'gif', 'png'), $this->user->user_id);
+            $picture = Upload::upload($_FILES, "/images/picture/", array('jpg', 'jpeg', 'gif', 'png'), $user_id);
  
             if($picture == 'Invalid file type.') {
                 
@@ -94,12 +94,12 @@ class users_controller extends base_controller {
                 
                 # Upload Image
                 $data = Array('picture' => $picture);
-                DB::instance(DB_NAME)->update('users', $data, 'WHERE user_id = '.$this->user->user_id);
+                DB::instance(DB_NAME)->update('users', $data, 'WHERE user_id = '.$user_id);
  
                 # Resize and Save Image
                 $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/images/picture/'.$picture);
-                $imageObj->resize(150,150,'crop');
-                $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/image/picture/'.$picture);
+                $imageObj->resize(200,200,'crop');
+                $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/images/picture/'.$picture);
                 
                 
             }
@@ -215,7 +215,7 @@ class users_controller extends base_controller {
 
         # Pass data to the View
         $this->template->content->posts = $posts;
-
+		$this->template->content->picture = $picture;
 
     # Pass information to the view fragment
     #$this->template->content->user_name = $user_name;

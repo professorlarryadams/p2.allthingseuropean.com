@@ -8,8 +8,8 @@
     	User ID: <?=$user->user_id?><br>
         Email: <?=$user->email?><br>
     	Country: <?=$user->country?><br>
-        Picture: <?=$user->picture?><br>
-         <img src="<?=$user->picture; ?>" class='profile'>
+        Picture: <br>
+        <img src="<?=$user->picture; ?>" class='profile'>
         </h3>
 	
 	<?php else: ?>

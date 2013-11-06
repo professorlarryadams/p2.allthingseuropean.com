@@ -62,8 +62,6 @@ class posts_controller extends base_controller {
 
     # Execute this query with the select_array method
     # select_array will return our results in an array and use the "users_id_followed" field as the index.
-    # This will come in handy when we get to the view
-    # Store our results (an array) in the variable $connections
     $connections = DB::instance(DB_NAME)->select_array($q, 'user_id_followed');
 
     # Pass data (users and connections) to the view
