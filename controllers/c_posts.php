@@ -112,8 +112,7 @@ class posts_controller extends base_controller {
             posts.created,
             posts.user_id AS post_user_id,
             users_users.user_id AS follower_id,
-            users.picture,
-			users.first_name,
+            users.first_name,
             users.last_name
         FROM posts
         INNER JOIN users_users 
