@@ -1,7 +1,7 @@
 <section>
 
 <article>
-	<h1 style="">All Things European Blogs</h1>
+	<h1 class="title">All Things European Blogs</h1>
 </article>
 
 <?php foreach($posts as $post): ?>

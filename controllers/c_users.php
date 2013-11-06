@@ -33,9 +33,23 @@ class users_controller extends base_controller {
 
     # Insert this user into the database 
     $user_id = DB::instance(DB_NAME)->insert("users", $_POST);
+	
+	# Upload image
+        Upload::upload($_FILES, "/images/flags/", array("JPG", "JPEG", "jpg", "jpeg", "gif", "GIF", "png", "PNG"), $user_id);
+        
+        # Filename (la.jpg)
+		$filename = $_FILES['picture']['name']; 
+		# Filename format (jpg, png, gif)
+        $extension = substr($filename, strrpos($filename, '.')); 
+		# user_id plus file extion (la.jpg)
+        $avatar = $user_id.$extension; 
 
+        # Add Image to DB in "picture" column
+        $data = Array("picture" => $picture);
+        DB::instance(DB_NAME)->update("users", $data, "WHERE user_id = '".$user_id."'"); 
+ 
     # They now have to log in 
-    Router::redirect("/users/login");
+    Router::redirect("/users/login/?success-true");
 
 	}
 
@@ -62,8 +76,8 @@ class users_controller extends base_controller {
     # If we didn't find a matching token in the database, it means login failed
     if(!$token) {
 
-        # Send them back to the login page
-        Router::redirect("/users/login/error");
+    # Send them back to the login page
+    Router::redirect("/users/login/?error=true");
 
     # But if we did, login succeeded! 
     } else {
@@ -85,18 +99,20 @@ class users_controller extends base_controller {
     }
 		}
 	
-	public function login($error = NULL) {
+  public function login($error = NULL, $success = NULL) {
+        
+        # Setup view
+        $this->template->content = View::instance('v_users_login');
+        $this->template->title   = "Login";
 
-    # Set up the view
-    $this->template->content = View::instance("v_users_login");
+        # Pass data to the view
+        $this->template->content->error = $error;
+        $this->template->content->success = $success;
 
-    # Pass data to the view
-    $this->template->content->error = $error;
+        # Render template
+        echo $this->template;
 
-    # Render the view
-    echo $this->template;
-
-	}
+    }
 
 	public function logout() {
 
@@ -119,16 +135,33 @@ class users_controller extends base_controller {
 	}
 	
 	public function profile($user_name = NULL) {
-
-    /*
-    If you look at _v_template you'll see it prints a $content variable in the <body>
-    Knowing that, let's pass our v_users_profile.php view fragment to $content so 
-    it's printed in the <body>
-    */
+		
+	# If user is blank, they're not logged in; redirect them to the login page
+    if(!$this->user) {
+    Router::redirect('/users/login');
+    }
+    
     $this->template->content = View::instance('v_users_profile');
 
     # $title is another variable used in _v_template to set the <title> of the page
     $this->template->title = "Profile";
+	
+	# Query
+            $q = "SELECT *
+                FROM posts 
+                WHERE user_id = ".$this->user->user_id;
+
+        # Run the query, store the results in the variable $posts
+        $posts = DB::instance(DB_NAME)->select_rows($q);
+
+        # Pass data to the View
+        $this->template->content->posts = $posts;
+
+        # Use load_client_files to generate the links from the above array
+        $this->template->client_files_head = Utils::load_client_files($client_files_head);  
+        
+        # Use load_client_files to generate the links from the above array
+        $this->template->client_files_body = Utils::load_client_files($client_files_body);
 
     # Pass information to the view fragment
     $this->template->content->user_name = $user_name;
@@ -136,6 +169,35 @@ class users_controller extends base_controller {
     # Render View
     echo $this->template;
 
-}
+	}
+
+	public function profile_update() {
+        // Set up the view
+        $this->template->content = View::instance('v_users_profile_update');
+        $this->template->title   = "Update Profile";
+
+        // Render the view
+        echo $this->template;
+
+    }
+
+
+    public function p_profile_update() {
+
+
+        $q = "UPDATE    users
+            SET         first_name = '".$_REQUEST['first_name']."',
+                        last_name = '".$_REQUEST['last_name']."',
+                        email = '".$_REQUEST['email']."'
+            WHERE       email = '".$this->user->email."'";
+
+        DB::instance(DB_NAME)->query($q);
+        
+		# Send them back to the login page with a success message
+		Router::redirect("/users/profile");
+
+        
+        
+    }
 
 } # eoc

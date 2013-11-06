@@ -1,10 +1,12 @@
-
 <div id="content">
+<h3>Select Unfollow to view all postings:</h3>
+<br>
+
 <h2>
 <?php foreach($users as $user): ?>
 
     <!-- Print this user's name -->
-    <?=$user['first_name']?> <?=$user['last_name']?>
+    <?=$picture['picture']?> <?=$user['first_name']?> <?=$user['last_name']?>
 
     <!-- If there exists a connection with this user, show a unfollow link -->
     <?php if(isset($connections[$user['user_id']])): ?>
