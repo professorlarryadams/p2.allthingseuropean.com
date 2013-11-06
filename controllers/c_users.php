@@ -94,7 +94,7 @@ class users_controller extends base_controller {
  
                 # Resize and Save Image
                 $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/images/flags/'.$picture);
-                $imageObj->resize(200,200,'crop');
+                $imageObj->resize(64,64,'auto');
                 $imageObj->save_image($_SERVER['DOCUMENT_ROOT'].'/images/flags/'.$picture);
                 
                 
@@ -199,7 +199,7 @@ class users_controller extends base_controller {
     $this->template->content = View::instance('v_users_profile');
 
     # $title is another variable used in _v_template to set the <title> of the page
-    $this->template->title = "Profile of".$this->user->first_name;
+    $this->template->title = "Profile of ".$this->user->first_name;
 	
 	# Query
             $q = "SELECT *

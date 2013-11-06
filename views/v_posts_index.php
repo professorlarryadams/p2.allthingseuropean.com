@@ -8,7 +8,7 @@
 
 <article>
 
-	<p><img src="<?=$user->picture; ?>" class='profile'></p>
+	<p><img src="/images/flags/<?=$user['picture']?>" alt="Blogger image" class='profile'></p>
 
     <h2><?=$post['first_name']?> <?=$post['last_name']?> posted:</h2>
 

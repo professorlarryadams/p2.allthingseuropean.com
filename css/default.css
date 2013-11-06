@@ -39,8 +39,11 @@ article {
 	border: thin solid;
 	background-color: #fff;
 	text-align:left;
-	
-	
+}
+
+img {
+	width: 64px;
+	height: 64px;
 }
 
 table {
